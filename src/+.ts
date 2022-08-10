@@ -176,7 +176,7 @@ const completionSpec: Fig.Spec = {
                   name: ["--deploy", "-d"],
                   description: "Deploy to staging website",
                   insertValue:
-                    "\b\b\b\b\b\b\b\b\b\b\b\bcp web/stg.firebase-config.js web/firebase-config.js\ncp lib/generated/stg.firebase_options.dart lib/generated/firebase_options.dart\ncp lib/core/domain/prod.secrets.dart lib/core/domain/secrets.dart\nflutter build web --web-renderer canvaskit --dart-define=DART_WEB_RECAPTCHA_SITE_KEY=$WEB_RECAPTCHA_SITE_KEY_STG\nrm -rf ../firebase/public/**\ncp -r ./build/web/. ../firebase/public\ncd ../firebase\ncp stg.firebase.json firebase.json\nfirebase deploy -P stg --only hosting:staging\ncd ../app\n",
+                    "\b\b\b\b\b\b\b\b\b\b\b\bcp web/stg.firebase-config.js web/firebase-config.js\ncp lib/generated/stg.firebase_options.dart lib/generated/firebase_options.dart\ncp lib/core/domain/stg.secrets.dart lib/core/domain/secrets.dart\nflutter build web --web-renderer canvaskit --dart-define=DART_WEB_RECAPTCHA_SITE_KEY=$WEB_RECAPTCHA_SITE_KEY_STG\nrm -rf ../firebase/public/**\ncp -r ./build/web/. ../firebase/public\ncd ../firebase\ncp stg.firebase.json firebase.json\nfirebase deploy -P stg --only hosting:staging\ncd ../app\n",
                 },
               ],
             },
