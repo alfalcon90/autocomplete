@@ -119,13 +119,13 @@ const completionSpec: Fig.Spec = {
               name: ["--prod", "-p"],
               description: "Switch firebase config to production",
               insertValue:
-                "\b\b\b\bcp prod.firebase.json firebase.json && cp functions/src/config/prod.serviceAccount.json functions/src/config/serviceAccount.json && firebase use prod\n",
+                "\b\b\b\b\b\bcp prod.firebase.json firebase.json && cp functions/src/config/prod.serviceAccount.json functions/src/config/serviceAccount.json && firebase use prod\n",
             },
             {
               name: ["--stg", "-s"],
               description: "Switch firebase config to staging",
               insertValue:
-                "\b\b\b\bcp stg.firebase.json firebase.json && cp functions/src/config/stg.serviceAccount.json functions/src/config/serviceAccount.json && firebase use stg\n",
+                "\b\b\b\b\b\bcp stg.firebase.json firebase.json && cp functions/src/config/stg.serviceAccount.json functions/src/config/serviceAccount.json && firebase use stg\n",
             },
           ],
         },
