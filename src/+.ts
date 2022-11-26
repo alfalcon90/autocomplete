@@ -107,21 +107,45 @@ const completionSpec: Fig.Spec = {
       ],
     },
     {
-      icon: "☁️",
+      icon: "➡️",
       name: ["switch", "s"],
-      description: "Switch firebase project",
-      options: [
+      description: "Switch firebase or flutter config",
+      subcommands: [
         {
-          name: ["--prod", "-p"],
-          description: "Switch firebase project to production",
-          insertValue:
-            "\b\b\b\bcp prod.firebase.json firebase.json && cp functions/src/config/prod.serviceAccount.json functions/src/config/serviceAccount.json && firebase use prod\n",
+          name: ["cloud", "c"],
+          description: "Switch firebase config",
+          options: [
+            {
+              name: ["--prod", "-p"],
+              description: "Switch firebase config to production",
+              insertValue:
+                "\b\b\b\bcp prod.firebase.json firebase.json && cp functions/src/config/prod.serviceAccount.json functions/src/config/serviceAccount.json && firebase use prod\n",
+            },
+            {
+              name: ["--stg", "-s"],
+              description: "Switch firebase config to staging",
+              insertValue:
+                "\b\b\b\bcp stg.firebase.json firebase.json && cp functions/src/config/stg.serviceAccount.json functions/src/config/serviceAccount.json && firebase use stg\n",
+            },
+          ],
         },
         {
-          name: ["--stg", "-s"],
-          description: "Switch firebase project to staging",
-          insertValue:
-            "\b\b\b\bcp stg.firebase.json firebase.json && cp functions/src/config/stg.serviceAccount.json functions/src/config/serviceAccount.json && firebase use stg\n",
+          name: ["app", "a"],
+          description: "Switch flutter config",
+          options: [
+            {
+              name: ["--prod", "-p"],
+              description: "Switch app config to production",
+              insertValue:
+                "\b\b\b\b\b\b\b\bcp web/prod.firebase-config.js web/firebase-config.js\ncp lib/generated/prod.firebase_options.dart lib/generated/firebase_options.dart\ncp lib/core/domain/prod.secrets.dart lib/core/domain/secrets.dart\n",
+            },
+            {
+              name: ["--stg", "-s"],
+              description: "Switch app config to staging",
+              insertValue:
+                "\b\b\b\b\b\b\b\bcp web/stg.firebase-config.js web/firebase-config.js\ncp lib/generated/stg.firebase_options.dart lib/generated/firebase_options.dart\ncp lib/core/domain/stg.secrets.dart lib/core/domain/secrets.dart\n",
+            },
+          ],
         },
       ],
     },
