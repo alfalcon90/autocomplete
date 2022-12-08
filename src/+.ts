@@ -24,8 +24,8 @@ const completionSpec: Fig.Spec = {
       -e 'tell application "Code" to activate' \
       -e 'tell application "System Events" to tell process "Code" to keystroke "t" using command down' \
       -e 'delay 2.5' \
-      -e 'tell application "System Events" to tell process "Code" to keystroke "node12 && npm run watch"' \
-      -e 'tell application "System Events" to tell process "Code" to key code 76' && npm run stop && firebase use stg && cp ../stg.firebase.json ../firebase.json && cp src/config/stg.serviceAccount.json src/config/serviceAccount.json && node12 && npm run serve\n`,
+      -e 'tell application "System Events" to tell process "Code" to keystroke "npm run watch"' \
+      -e 'tell application "System Events" to tell process "Code" to key code 76' && npm run stop && firebase use stg && cp ../stg.firebase.json ../firebase.json && cp src/config/stg.serviceAccount.json src/config/serviceAccount.json && npm run serve\n`,
     },
     {
       icon: "☁️",
