@@ -112,6 +112,44 @@ const completionSpec: Fig.Spec = {
             },
           ],
         },
+        {
+          name: ["storage", "t"],
+          description: "Deploys storage rules",
+          insertValue: `\b\b\b\b\b\b\b\b\bfirebase deploy --only storage\n`,
+          options: [
+            {
+              name: ["--prod", "-p"],
+              description: "Deploys storage rules to production",
+              insertValue:
+                "\b\b\b\b\b\b\b\b\bcp prod.firebase.json firebase.json && cp functions/src/config/prod.serviceAccount.json functions/src/config/serviceAccount.json && firebase deploy -P prod --only storage\n",
+            },
+            {
+              name: ["--stg", "-s"],
+              description: "Deploys storage rules to staging",
+              insertValue:
+                "\b\b\b\b\b\b\b\b\bcp stg.firebase.json firebase.json && cp functions/src/config/stg.serviceAccount.json functions/src/config/serviceAccount.json && firebase deploy -P stg --only storage\n",
+            },
+          ],
+        },
+        {
+          name: ["extensions", "x"],
+          description: "Deploys extensions configuration",
+          insertValue: `\b\b\b\b\b\b\b\b\bfirebase deploy --only extensions\n`,
+          options: [
+            {
+              name: ["--prod", "-p"],
+              description: "Deploys extensions configuration to production",
+              insertValue:
+                "\b\b\b\b\b\b\b\b\bcp prod.firebase.json firebase.json && cp functions/src/config/prod.serviceAccount.json functions/src/config/serviceAccount.json && firebase deploy -P prod --only extensions\n",
+            },
+            {
+              name: ["--stg", "-s"],
+              description: "Deploys extensions configuration to staging",
+              insertValue:
+                "\b\b\b\b\b\b\b\b\bcp stg.firebase.json firebase.json && cp functions/src/config/stg.serviceAccount.json functions/src/config/serviceAccount.json && firebase deploy -P stg --only extensions\n",
+            },
+          ],
+        },
       ],
     },
     {
