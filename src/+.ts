@@ -25,13 +25,13 @@ const completionSpec: Fig.Spec = {
       -e 'tell application "System Events" to tell process "Code" to keystroke "t" using command down' \
       -e 'delay 2.5' \
       -e 'tell application "System Events" to tell process "Code" to keystroke "node16 && npm run watch"' \
-      -e 'tell application "System Events" to tell process "Code" to key code 76' && npm run stop && firebase use stg && cp ../stg.firebase.json ../firebase.json && cp src/config/stg.serviceAccount.json src/config/serviceAccount.json cp src/config/stg.secrets.ts src/config/secrets.ts && node16 && npm run serve\n`,
+      -e 'tell application "System Events" to tell process "Code" to key code 76' && npm run stop && firebase use stg && cp ../stg.firebase.json ../firebase.json && cp src/config/stg.serviceAccount.json src/config/serviceAccount.json && cp src/config/stg.secrets.ts src/config/secrets.ts && node16 && npm run serve\n`,
       options: [
         {
           name: ["--no-watch", "-n"],
           description: "Launches firebase emulator",
           insertValue:
-            "\b\b\b\b\b\b\b\bnpm run stop && firebase use stg && cp ../stg.firebase.json ../firebase.json && cp src/config/stg.serviceAccount.json src/config/serviceAccount.json cp src/config/stg.secrets.ts src/config/secrets.ts && node16 && npm run serve\n",
+            "\b\b\b\b\b\b\b\bnpm run stop && firebase use stg && cp ../stg.firebase.json ../firebase.json && cp src/config/stg.serviceAccount.json src/config/serviceAccount.json && cp src/config/stg.secrets.ts src/config/secrets.ts && node16 && npm run serve\n",
         },
       ],
     },
@@ -45,13 +45,13 @@ const completionSpec: Fig.Spec = {
           name: ["--prod", "-p"],
           description: "Deploys firebase project to production",
           insertValue:
-            "\b\b\b\bcp prod.firebase.json firebase.json && cp functions/src/config/prod.serviceAccount.json functions/src/config/serviceAccount.json cp functions/src/config/prod.secrets.ts functions/src/config/secrets.ts && firebase deploy -P prod\n",
+            "\b\b\b\bcp prod.firebase.json firebase.json && cp functions/src/config/prod.serviceAccount.json functions/src/config/serviceAccount.json && cp functions/src/config/prod.secrets.ts functions/src/config/secrets.ts && firebase deploy -P prod\n",
         },
         {
           name: ["--stg", "-s"],
           description: "Deploys firebase project to staging",
           insertValue:
-            "\b\b\b\bcp stg.firebase.json firebase.json && cp functions/src/config/stg.serviceAccount.json functions/src/config/serviceAccount.json cp functions/src/config/stg.secrets.ts functions/src/config/secrets.ts && firebase deploy -P stg\n",
+            "\b\b\b\bcp stg.firebase.json firebase.json && cp functions/src/config/stg.serviceAccount.json functions/src/config/serviceAccount.json && cp functions/src/config/stg.secrets.ts functions/src/config/secrets.ts && firebase deploy -P stg\n",
         },
       ],
       subcommands: [
@@ -64,13 +64,13 @@ const completionSpec: Fig.Spec = {
               name: ["--prod", "-p"],
               description: "Deploys firebase functions to production",
               insertValue:
-                "\b\b\b\b\b\b\b\b\bcp prod.firebase.json firebase.json && cp functions/src/config/prod.serviceAccount.json functions/src/config/serviceAccount.json cp functions/src/config/prod.secrets.ts functions/src/config/secrets.ts && firebase deploy -P prod --only functions\n",
+                "\b\b\b\b\b\b\b\b\bcp prod.firebase.json firebase.json && cp functions/src/config/prod.serviceAccount.json functions/src/config/serviceAccount.json && cp functions/src/config/prod.secrets.ts functions/src/config/secrets.ts && firebase deploy -P prod --only functions\n",
             },
             {
               name: ["--stg", "-s"],
               description: "Deploys firebase functions to staging",
               insertValue:
-                "\b\b\b\b\b\b\b\b\bcp stg.firebase.json firebase.json && cp functions/src/config/stg.serviceAccount.json functions/src/config/serviceAccount.json cp functions/src/config/stg.secrets.ts functions/src/config/secrets.ts && firebase deploy -P stg --only functions\n",
+                "\b\b\b\b\b\b\b\b\bcp stg.firebase.json firebase.json && cp functions/src/config/stg.serviceAccount.json functions/src/config/serviceAccount.json && cp functions/src/config/stg.secrets.ts functions/src/config/secrets.ts && firebase deploy -P stg --only functions\n",
             },
           ],
         },
@@ -102,13 +102,13 @@ const completionSpec: Fig.Spec = {
               name: ["--prod", "-p"],
               description: "Deploys firestore rules to production",
               insertValue:
-                "\b\b\b\b\b\b\b\b\bcp prod.firebase.json firebase.json && cp functions/src/config/prod.serviceAccount.json functions/src/config/serviceAccount.json cp functions/src/config/prod.secrets.ts functions/src/config/secrets.ts && firebase deploy -P prod --only firestore\n",
+                "\b\b\b\b\b\b\b\b\bcp prod.firebase.json firebase.json && cp functions/src/config/prod.serviceAccount.json functions/src/config/serviceAccount.json && cp functions/src/config/prod.secrets.ts functions/src/config/secrets.ts && firebase deploy -P prod --only firestore\n",
             },
             {
               name: ["--stg", "-s"],
               description: "Deploys firestore rules to staging",
               insertValue:
-                "\b\b\b\b\b\b\b\b\bcp stg.firebase.json firebase.json && cp functions/src/config/stg.serviceAccount.json functions/src/config/serviceAccount.json cp functions/src/config/stg.secrets.ts functions/src/config/secrets.ts && firebase deploy -P stg --only firestore\n",
+                "\b\b\b\b\b\b\b\b\bcp stg.firebase.json firebase.json && cp functions/src/config/stg.serviceAccount.json functions/src/config/serviceAccount.json && cp functions/src/config/stg.secrets.ts functions/src/config/secrets.ts && firebase deploy -P stg --only firestore\n",
             },
           ],
         },
@@ -121,13 +121,13 @@ const completionSpec: Fig.Spec = {
               name: ["--prod", "-p"],
               description: "Deploys storage rules to production",
               insertValue:
-                "\b\b\b\b\b\b\b\b\bcp prod.firebase.json firebase.json && cp functions/src/config/prod.serviceAccount.json functions/src/config/serviceAccount.json cp functions/src/config/prod.secrets.ts functions/src/config/secrets.ts && firebase deploy -P prod --only storage\n",
+                "\b\b\b\b\b\b\b\b\bcp prod.firebase.json firebase.json && cp functions/src/config/prod.serviceAccount.json functions/src/config/serviceAccount.json && cp functions/src/config/prod.secrets.ts functions/src/config/secrets.ts && firebase deploy -P prod --only storage\n",
             },
             {
               name: ["--stg", "-s"],
               description: "Deploys storage rules to staging",
               insertValue:
-                "\b\b\b\b\b\b\b\b\bcp stg.firebase.json firebase.json && cp functions/src/config/stg.serviceAccount.json functions/src/config/serviceAccount.json cp functions/src/config/stg.secrets.ts functions/src/config/secrets.ts && firebase deploy -P stg --only storage\n",
+                "\b\b\b\b\b\b\b\b\bcp stg.firebase.json firebase.json && cp functions/src/config/stg.serviceAccount.json functions/src/config/serviceAccount.json && cp functions/src/config/stg.secrets.ts functions/src/config/secrets.ts && firebase deploy -P stg --only storage\n",
             },
           ],
         },
@@ -140,13 +140,13 @@ const completionSpec: Fig.Spec = {
               name: ["--prod", "-p"],
               description: "Deploys extensions configuration to production",
               insertValue:
-                "\b\b\b\b\b\b\b\b\bcp prod.firebase.json firebase.json && cp functions/src/config/prod.serviceAccount.json functions/src/config/serviceAccount.json cp functions/src/config/prod.secrets.ts functions/src/config/secrets.ts && firebase deploy -P prod --only extensions\n",
+                "\b\b\b\b\b\b\b\b\bcp prod.firebase.json firebase.json && cp functions/src/config/prod.serviceAccount.json functions/src/config/serviceAccount.json && cp functions/src/config/prod.secrets.ts functions/src/config/secrets.ts && firebase deploy -P prod --only extensions\n",
             },
             {
               name: ["--stg", "-s"],
               description: "Deploys extensions configuration to staging",
               insertValue:
-                "\b\b\b\b\b\b\b\b\bcp stg.firebase.json firebase.json && cp functions/src/config/stg.serviceAccount.json functions/src/config/serviceAccount.json cp functions/src/config/stg.secrets.ts functions/src/config/secrets.ts && firebase deploy -P stg --only extensions\n",
+                "\b\b\b\b\b\b\b\b\bcp stg.firebase.json firebase.json && cp functions/src/config/stg.serviceAccount.json functions/src/config/serviceAccount.json && cp functions/src/config/stg.secrets.ts functions/src/config/secrets.ts && firebase deploy -P stg --only extensions\n",
             },
           ],
         },
@@ -165,13 +165,13 @@ const completionSpec: Fig.Spec = {
               name: ["--prod", "-p"],
               description: "Switch firebase config to production",
               insertValue:
-                "\b\b\b\b\b\bcp prod.firebase.json firebase.json && cp functions/src/config/prod.serviceAccount.json functions/src/config/serviceAccount.json cp functions/src/config/prod.secrets.ts functions/src/config/secrets.ts && firebase use prod\n",
+                "\b\b\b\b\b\bcp prod.firebase.json firebase.json && cp functions/src/config/prod.serviceAccount.json functions/src/config/serviceAccount.json && cp functions/src/config/prod.secrets.ts functions/src/config/secrets.ts && firebase use prod\n",
             },
             {
               name: ["--stg", "-s"],
               description: "Switch firebase config to staging",
               insertValue:
-                "\b\b\b\b\b\bcp stg.firebase.json firebase.json && cp functions/src/config/stg.serviceAccount.json functions/src/config/serviceAccount.json cp functions/src/config/stg.secrets.ts functions/src/config/secrets.ts && firebase use stg\n",
+                "\b\b\b\b\b\bcp stg.firebase.json firebase.json && cp functions/src/config/stg.serviceAccount.json functions/src/config/serviceAccount.json && cp functions/src/config/stg.secrets.ts functions/src/config/secrets.ts && firebase use stg\n",
             },
           ],
         },
