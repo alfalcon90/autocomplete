@@ -7,13 +7,13 @@ const completionSpec: Fig.Spec = {
       name: "build_runner",
       description: "Starts build_runner code generator",
       insertValue:
-        "\b\bflutter pub run build_runner watch --delete-conflicting-outputs\n",
+        "\b\bdart run build_runner watch --delete-conflicting-outputs\n",
     },
     {
       icon: "🤖",
       name: "import_sorter",
       description: "Starts import_sorter",
-      insertValue: "\b\bflutter pub run import_sorter:main\n",
+      insertValue: "\b\bdart run import_sorter:main\n",
     },
     {
       icon: "☁️",
