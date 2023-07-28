@@ -183,13 +183,13 @@ const completionSpec: Fig.Spec = {
               name: ["--prod", "-p"],
               description: "Switch app config to production",
               insertValue:
-                "\b\b\b\b\b\b\b\bcp web/prod.firebase-config.js web/firebase-config.js\ncp lib/generated/prod.firebase_options.dart lib/generated/firebase_options.dart\ncp lib/core/domain/prod.secrets.dart lib/core/domain/secrets.dart\n",
+                "\b\b\b\b\b\b\b\bcp web/prod.firebase-config.js web/firebase-config.js\ncp lib/generated/prod.firebase_options.dart lib/generated/firebase_options.dart\ncp lib/core/domain/prod.secrets.dart lib/core/domain/secrets.dart\ncp android/app/prod.google-services.json android/app/google-services.json\ncp ios/Runner/prod.GoogleService-Info.plist ios/Runner/GoogleService-Info.plist\ncp ios/Flutter/prod.Secrets.xcconfig ios/Flutter/Secrets.xcconfig\n",
             },
             {
               name: ["--stg", "-s"],
               description: "Switch app config to staging",
               insertValue:
-                "\b\b\b\b\b\b\b\bcp web/stg.firebase-config.js web/firebase-config.js\ncp lib/generated/stg.firebase_options.dart lib/generated/firebase_options.dart\ncp lib/core/domain/stg.secrets.dart lib/core/domain/secrets.dart\n",
+                "\b\b\b\b\b\b\b\bcp web/stg.firebase-config.js web/firebase-config.js\ncp lib/generated/stg.firebase_options.dart lib/generated/firebase_options.dart\ncp lib/core/domain/stg.secrets.dart lib/core/domain/secrets.dart\ncp android/app/stg.google-services.json android/app/google-services.json\ncp ios/Runner/stg.GoogleService-Info.plist ios/Runner/GoogleService-Info.plist\ncp ios/Flutter/stg.Secrets.xcconfig ios/Flutter/Secrets.xcconfig\n",
             },
           ],
         },
