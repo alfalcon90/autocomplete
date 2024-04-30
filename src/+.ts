@@ -16,12 +16,6 @@ const completionSpec: Fig.Spec = {
       insertValue: "\b\bdart run import_sorter:main\n",
     },
     {
-      icon: "▶️",
-      name: "serve",
-      description: "Run serve.sh script under scripts folder",
-      insertValue: "\b\bzsh scripts/serve.zsh",
-    },
-    {
       icon: "🧽",
       name: "clean",
       description: "Cleans flutter workspace",
@@ -50,31 +44,9 @@ const completionSpec: Fig.Spec = {
           subcommands: [
             {
               name: ["prod", "p"],
-              description: "Build web app for production",
+              description: "Build web app",
               insertValue:
-                "\b\b\b\b\b\b\b\bcp web/prod.firebase-config.js web/firebase-config.js\ncp lib/generated/prod.firebase_options.dart lib/generated/firebase_options.dart\ncp lib/core/domain/prod.secrets.dart lib/core/domain/secrets.dart\nflutter build web --web-renderer canvaskit\n",
-              options: [
-                {
-                  name: ["--deploy", "-d"],
-                  description: "Deploy to production website",
-                  insertValue:
-                    "\b\b\b\b\b\b\b\b\b\b\b\bcp web/prod.firebase-config.js web/firebase-config.js\ncp lib/generated/prod.firebase_options.dart lib/generated/firebase_options.dart\ncp lib/core/domain/prod.secrets.dart lib/core/domain/secrets.dart\nflutter build web --web-renderer canvaskit\nrm -rf ../firebase/public/**\ncp -r ./build/web/. ../firebase/public\ncd ../firebase\ncp prod.firebase.json firebase.json\nfirebase deploy -P prod --only hosting:production && cd ../app\n",
-                },
-              ],
-            },
-            {
-              name: ["stg", "s"],
-              description: "Build web app for staging",
-              insertValue:
-                "\b\b\b\b\b\b\b\bcp web/stg.firebase-config.js web/firebase-config.js\ncp lib/generated/stg.firebase_options.dart lib/generated/firebase_options.dart\ncp lib/core/domain/stg.secrets.dart lib/core/domain/secrets.dart\nflutter build web --web-renderer canvaskit\n",
-              options: [
-                {
-                  name: ["--deploy", "-d"],
-                  description: "Deploy to staging website",
-                  insertValue:
-                    "\b\b\b\b\b\b\b\b\b\b\b\bcp web/stg.firebase-config.js web/firebase-config.js\ncp lib/generated/stg.firebase_options.dart lib/generated/firebase_options.dart\ncp lib/core/domain/stg.secrets.dart lib/core/domain/secrets.dart\nflutter build web --web-renderer canvaskit\nrm -rf ../firebase/public/**\ncp -r ./build/web/. ../firebase/public\ncd ../firebase\ncp stg.firebase.json firebase.json\nfirebase deploy -P stg --only hosting:staging && cd ../app\n",
-                },
-              ],
+                "\b\b\b\b\b\b\b\bflutter build web --web-renderer canvaskitn",
             },
           ],
         },
